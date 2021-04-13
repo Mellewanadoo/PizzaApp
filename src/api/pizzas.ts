@@ -17,3 +17,21 @@ router.post("/pizzas", async (req, res) => {
     .returning("*");
   res.json(pizza);
 });
+
+router.patch("/pizzas", async (req, res) => {
+  const { name } = req.body;
+  const pizza = await PizzaModel.query()
+      .update({
+        name,
+      })
+      .returning("*");
+  res.json(pizza);
+});
+
+router.delete("/pizzas", async (req, res) => {
+  const { name } = req.body;
+  const pizza = await PizzaModel.query()
+      .delete()
+      .returning("*");
+  res.json(pizza);
+});
