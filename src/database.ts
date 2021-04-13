@@ -17,4 +17,5 @@ export class PizzaModel extends Model {
   static get idColumn() {
     return "id";
   }
+
 }
