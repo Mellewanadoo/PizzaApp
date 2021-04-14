@@ -10,9 +10,12 @@ router.get("/pizzas", async (req, res) => {
 
 router.post("/pizzas", async (req, res) => {
   const { name } = req.body;
-  const pizza = await PizzaModel.query()
+  const { price } = req.body;
+  const { size } = req.body;
+  const { photo } = req.body;
+    const pizza = await PizzaModel.query()
     .insert({
-      name,
+      name, price, size, photo,
     })
     .returning("*");
   res.json(pizza);
@@ -20,16 +23,18 @@ router.post("/pizzas", async (req, res) => {
 
 router.patch("/pizzas", async (req, res) => {
   const { name } = req.body;
+  const { price } = req.body;
+  const { size } = req.body;
+  const { photo } = req.body;
   const pizza = await PizzaModel.query()
       .update({
-        name,
+        name, price, size, photo,
       })
       .returning("*");
   res.json(pizza);
 });
 
 router.delete("/pizzas", async (req, res) => {
-  const { name } = req.body;
   const pizza = await PizzaModel.query()
       .delete()
       .returning("*");
