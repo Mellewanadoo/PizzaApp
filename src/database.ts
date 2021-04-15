@@ -10,9 +10,8 @@ export class PizzaModel extends Model {
   id!: number;
   name!: string;
   price!: number;
-  size!: "S"|"L"|"XL";
+  size!: "S" | "L" | "XL";
   photo!: string;
-
 
   static get tableName() {
     return "pizzas";
@@ -31,7 +30,6 @@ export class PlanetModel extends Model {
   especesInteligentes!: string;
   premiereApparition!: string;
 
-
   static get tableName() {
     return "planets";
   }
@@ -49,7 +47,6 @@ export class VaisseauModel extends Model {
   equipage!: number;
   nbPassenger!: number;
 
-
   static get tableName() {
     return "vaisseau";
   }
@@ -58,4 +55,3 @@ export class VaisseauModel extends Model {
     return "id";
   }
 }
-
