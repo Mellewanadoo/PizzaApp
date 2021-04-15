@@ -6,4 +6,4 @@ export const router = Router();
 
 router.use("/api", pizzas.router);
 router.use("/api", planets.router);
-router.use("/api", vaisseau.router)
+router.use("/api", vaisseau.router);
