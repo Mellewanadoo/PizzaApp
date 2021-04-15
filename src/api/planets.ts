@@ -7,7 +7,10 @@ router.get("/planets", async (req, res) => {
     const planets = await PlanetModel.query();
     res.json(planets);
 });
-
+router.get("/planets/:id", async (req, res) => {
+    const planets = await PlanetModel.query().findById(req.params.id)
+    res.json(planets);
+});
 router.post("/planets", async (req, res) => {
     const { image } = req.body;
     const { nom } = req.body;
@@ -23,7 +26,7 @@ router.post("/planets", async (req, res) => {
     res.json(planets);
 });
 
-router.patch("/planets", async (req, res) => {
+router.patch("/planets/:id", async (req, res) => {
     const { image } = req.body;
     const { nom } = req.body;
     const { localisation } = req.body;
@@ -31,16 +34,16 @@ router.patch("/planets", async (req, res) => {
     const { especesInteligentes } = req.body;
     const { premiereApparition } = req.body;
     const planets = await PlanetModel.query()
-        .update({
+        .patchAndFetchById(req.params.id,{
             image, nom, localisation, paysage, especesInteligentes, premiereApparition,
         })
         .returning("*");
     res.json(planets);
 });
 
-router.delete("/planets", async (req, res) => {
+router.delete("/planets/:id", async (req, res) => {
     const planets = await PlanetModel.query()
-        .delete()
+        .deleteById(req.params.id)
         .returning("*");
     res.json(planets);
 });
