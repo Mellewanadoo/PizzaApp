@@ -9,7 +9,7 @@
     "migrate:make": "cross-env NODE_ENV=development knex migrate:make --knexfile ./src/knexfile.ts",
     "build": "tsc",
     "start": "node ./build/index.js",
-    "prettier": "prettier --check ."
+    "prettier": "prettier . --check"
   },
   "devDependencies": {
     "@types/cors": "^2.8.10",

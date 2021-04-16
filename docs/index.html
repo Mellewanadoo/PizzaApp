@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns="http://www.w3.org/1999/html">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pizzapp-server doc</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/modern-normalize@1.0.0/modern-normalize.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css"
+    />
+    <style>
+      .markdown-body {
+        box-sizing: border-box;
+        min-width: 200px;
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 45px;
+      }
+
+      @media (max-width: 767px) {
+        .markdown-body {
+          padding: 15px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="markdown-body">
+      <h1>Pizzapp</h1>
+      <p>API public officiel de Pizzapp-server.</p>
+      <h2>GET <code>/api/pizzas</code></h2>
+      <p>Retourne la liste des pizzas.</p>
+      <h2>POST <code>/api/planets</code></h2>
+      <p>
+        Ajoute une nouvelle pizza. <br />
+        Cet ajout est au format json et contient
+      </p>
+      <ul>
+        <li>name en string</li>
+        <li>price en number</li>
+        <li>size qui est "S" | "L" | "XL"</li>
+        <li>photo en string</li>
+      </ul>
+      <h2>PATCH <code>/api/pizzas/id</code></h2>
+      <p>
+        Modifie une pizza. <br />
+        Cette modification est au format json et contient
+      </p>
+      <ul>
+        <li>name en string</li>
+        <li>price en number</li>
+        <li>size qui est "S" | "L" | "XL"</li>
+        <li>photo en string</li>
+      </ul>
+      <br />
+      <h2>GET <code>/api/planets</code></h2>
+      <p>Retourne la liste des planètes.</p>
+      <h2>POST <code>/api/planets</code></h2>
+      <p>
+        Ajoute une nouvelle planète. <br />
+        Cet ajout est au format json et contient
+      </p>
+      <ul>
+        <li>image en string</li>
+        <li>nom en string</li>
+        <li>localisation en string</li>
+        <li>paysage en string</li>
+        <li>especesInteligentes en string</li>
+        <li>premiereApparition en string</li>
+      </ul>
+      <h2>PATCH <code>/api/planets/id</code></h2>
+      <p>
+        Modifie une planète. <br />
+        Cette modification est au format json et contient
+      </p>
+      <ul>
+        <li>image en string</li>
+        <li>nom en string</li>
+        <li>localisation en string</li>
+        <li>paysage en string</li>
+        <li>especesInteligentes en string</li>
+        <li>premiereApparition en string</li>
+      </ul>
+      <h2>DELETE <code>/api/planets/id</code></h2>
+      <p>Supprime une planète.</p>
+      <br />
+      <h2>GET <code>/api/vaisseux</code></h2>
+      <p>Retourne la liste des vaisseaux.</p>
+      <h2>POST <code>/api/vaisseux</code></h2>
+      <p>
+        Ajoute un nouveau vaisseau. <br />
+        Cet ajout est au format json et contient
+      </p>
+      <ul>
+        <li>image en string</li>
+        <li>nom en string</li>
+        <li>type en string</li>
+        <li>lightSpeed en booleen</li>
+        <li>equipage en number</li>
+        <li>nbPassenger en number</li>
+      </ul>
+      <h2>PATCH <code>/api/vaisseau/id</code></h2>
+      <p>
+        Modifie un vaisseau. <br />
+        Cette modification est au format json et contient
+      </p>
+      <ul>
+        <li>image en string</li>
+        <li>nom en string</li>
+        <li>type en string</li>
+        <li>lightSpeed en booleen</li>
+        <li>equipage en number</li>
+        <li>nbPassenger en number</li>
+      </ul>
+      <h2>DELETE <code>/api/vaisseau/id</code></h2>
+      <p>Supprime un vaisseau.</p>
+    </main>
+  </body>
+</html>
