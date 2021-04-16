@@ -24,13 +24,13 @@ router.post("/pizzas", async (req, res) => {
   res.json(pizza);
 });
 
-router.patch("/pizzas", async (req, res) => {
+router.patch("/pizzas/:id", async (req, res) => {
   const { name } = req.body;
   const { price } = req.body;
   const { size } = req.body;
   const { photo } = req.body;
   const pizza = await PizzaModel.query()
-    .update({
+    .patchAndFetchById(req.params.id,{
       name,
       price,
       size,
@@ -40,7 +40,9 @@ router.patch("/pizzas", async (req, res) => {
   res.json(pizza);
 });
 
-router.delete("/pizzas", async (req, res) => {
-  const pizza = await PizzaModel.query().delete().returning("*");
+router.delete("/pizzas:id", async (req, res) => {
+  const pizza = await PizzaModel.query()
+      .deleteById(req.params.id)
+      .returning("*");
   res.json(pizza);
 });
