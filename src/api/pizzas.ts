@@ -30,7 +30,7 @@ router.patch("/pizzas/:id", async (req, res) => {
   const { size } = req.body;
   const { photo } = req.body;
   const pizza = await PizzaModel.query()
-    .patchAndFetchById(req.params.id,{
+    .patchAndFetchById(req.params.id, {
       name,
       price,
       size,
@@ -42,7 +42,7 @@ router.patch("/pizzas/:id", async (req, res) => {
 
 router.delete("/pizzas:id", async (req, res) => {
   const pizza = await PizzaModel.query()
-      .deleteById(req.params.id)
-      .returning("*");
+    .deleteById(req.params.id)
+    .returning("*");
   res.json(pizza);
 });
